@@ -1,0 +1,7 @@
+Options -Indexes 
+RewriteEngine on
+
+# Redirection vers www. ou m. si aucun des deux n'est précisé
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^$
+RewriteRule /?(.*)    http://www.%{HTTP_HOST}/$1 [L,R=301,NE]

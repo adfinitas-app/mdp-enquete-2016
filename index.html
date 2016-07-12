@@ -1,0 +1,299 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mie de Pain</title>
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/jquery.qtip.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+    </head>
+    <body>
+        <div class="container">
+            <a href="http://www.miedepain.asso.fr" target="_blank" class="logo"><img src="img/logo.png" /></a>
+            <div class="copyright kanit-extralight font-12 text-white">
+                 ©Sylvain Leser - La Mie de Pain
+            </div>
+            <div class="row fullwidth">
+                <div class="home columns column-full small-12">
+                    <div class="middle-screen">
+                        <div class="font-50 kanit-semibold text-white text-center text-uppercase">
+                            Comment passer de<br />l’urgence à l’insertion ?
+                        </div>
+                        <p class="kanit-extralight font-18 text-white text-center">Alors que 150 000 personnes se retrouvent privées de logement dans notre pays, les Œuvres de la Mie de Pain lancent une enquête pour connaître les actions que vous jugez prioritaires, afin de favoriser une réinsertion durable.</p>
+                        <p class="kanit-extralight font-18 text-white text-center">Merci de participer ! Vos réponses nous permettront d’intensifier notre mobilisation auprès des personnes en grande précarité, pour les accompagner « de l’urgence à l’insertion ».</p>
+                        <div class="text-center">
+                            <a href="javascript:void(0);" onclick="startQuiz();" class="btn-red">Je participe</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="row fullwidth">
+                <div class="quiz">
+                    <div class="quiz-question quiz0 columns column-full small-12">
+                        <div class="question-number"><span class="big">1</span>/5</div>
+                        <div class="middle-screen">
+                            <div class="font-50 kanit-semibold text-white text-center text-uppercase">
+                                1 minute
+                            </div>
+                            <div class="font-30 kanit-semibold text-white text-center text-uppercase">
+                                Pour participer à notre enquête
+                            </div>
+                            <div class="question font-24 kanit text-white text-center">
+                                Pensez-vous que, soutenue, une personne en situation<br />de précarité ou d’exclusion peut retrouver une vie normale ? 
+                            </div>
+                            <div class="answers font-24 kanit text-white text-center">
+                                <ul>
+                                    <li><input type="radio" name="question1" value="Oui" /> Oui</li>
+                                    <li><input type="radio" name="question1" value="Non" /> Non</li>
+                                </ul>
+                            </div>
+                            <div class="error kanit-extralight text-white text-center"></div>
+                            <div class="text-center">
+                                <a href="javascript:void(0);" onclick="nextQuestion(1);" class="btn-red">Continuer</a>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="quiz-question quiz1 columns column-full small-12">
+                        <div class="question-number"><span class="big">2</span>/5</div>
+                        <div class="middle-screen">
+                            <div class="font-50 kanit-semibold text-white text-center text-uppercase">
+                                1 minute
+                            </div>
+                            <div class="font-30 kanit-semibold text-white text-center text-uppercase">
+                                Pour participer à notre enquête
+                            </div>
+                            <div class="question font-24 kanit text-white text-center">
+                                Selon vous, pour se réinsérer dans la société,<br />le plus important est de :
+                            </div>
+                            <div class="answers font-24 kanit text-white text-center">
+                                <ul>
+                                    <li><input type="radio" name="question2" value="Trouver un logement" /> Trouver un logement</li>
+                                    <li><input type="radio" name="question2" value="Trouver un travail" /> Trouver un travail</li>
+                                    <li><input type="radio" name="question2" value="Renouer des liens avec sa famille, ses amis" /> Renouer des liens avec sa famille, ses amis</li>
+                                </ul>
+                            </div>
+                            <div class="error kanit-extralight text-white text-center"></div>
+                            <div class="text-center">
+                                <a href="javascript:void(0);" onclick="nextQuestion(2);" class="btn-red">Continuer</a>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="quiz-question quiz2 columns column-full small-12">
+                        <div class="question-number"><span class="big">3</span>/5</div>
+                        <div class="middle-screen">
+                            <div class="font-50 kanit-semibold text-white text-center text-uppercase">
+                                1 minute
+                            </div>
+                            <div class="font-30 kanit-semibold text-white text-center text-uppercase">
+                                Pour participer à notre enquête
+                            </div>
+                            <div class="question font-24 kanit text-white text-center">
+                                À votre avis, la première étape de l’insertion c’est de :
+                            </div>
+                            <div class="answers font-24 kanit text-white text-center">
+                                <ul>
+                                    <li><input type="radio" name="question3" value="Se soigner" /> Se soigner</li>
+                                    <li><input type="radio" name="question3" value="Retrouver ses droits sociaux" /> Retrouver ses droits sociaux</li>
+                                    <li><input type="radio" name="question3" value="Être mis à l’abri pour se poser et faire le point" /> Être mis à l’abri pour se poser et faire le point</li>
+                                    <li><input type="radio" name="question3" value="Avoir un projet" /> Avoir un projet</li>
+                                    <li><input type="radio" name="question3" value="Se remettre au travail" /> Se remettre au travail</li>
+                                </ul>
+                            </div>
+                            <div class="error kanit-extralight text-white text-center"></div>
+                            <div class="text-center">
+                                <a href="javascript:void(0);" onclick="nextQuestion(3);" class="btn-red">Continuer</a>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="quiz-question quiz3 columns column-full small-12">
+                        <div class="question-number"><span class="big">4</span>/5</div>
+                        <div class="middle-screen">
+                            <div class="font-50 kanit-semibold text-white text-center text-uppercase">
+                                1 minute
+                            </div>
+                            <div class="font-30 kanit-semibold text-white text-center text-uppercase">
+                                Pour participer à notre enquête
+                            </div>
+                            <div class="question font-24 kanit text-white text-center">
+                                Connaissez-vous les Œuvres de la Mie de Pain ?
+                            </div>
+                            <div class="answers font-24 kanit text-white text-center">
+                                <ul>
+                                    <li><input type="radio" name="question4" value="Oui" /> Oui</li>
+                                    <li><input type="radio" name="question4" value="Non" /> Non</li>
+                                </ul>
+                            </div>
+                            <div class="error kanit-extralight text-white text-center"></div>
+                            <div class="text-center">
+                                <a href="javascript:void(0);" onclick="nextQuestion(4);" class="btn-red">Continuer</a>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="quiz-question quiz4 columns column-full small-12">
+                        <div class="question-number"><span class="big">5</span>/5</div>
+                        <div class="middle-screen">
+                            <div class="font-50 kanit-semibold text-white text-center text-uppercase">
+                                1 minute
+                            </div>
+                            <div class="font-30 kanit-semibold text-white text-center text-uppercase">
+                                Pour participer à notre enquête
+                            </div>
+                            <div class="question font-24 kanit text-white text-center">
+                                Selon vous, les Œuvres de la Mie de Pain proposent :
+                            </div>
+                            <div class="answers font-24 kanit text-white text-center">
+                                <ul>
+                                    <li><input type="radio" name="question5" value="Un abri" /> Un abri</li>
+                                    <li><input type="radio" name="question5" value="Un logement" /> Un logement</li>
+                                    <li><input type="radio" name="question5" value="Un accompagnement social" /> Un accompagnement social</li>
+                                    <li><input type="radio" name="question5" value="Une alimentation" /> Une alimentation</li>
+                                    <li><input type="radio" name="question5" value="Un travail" /> Un travail</li>
+                                    <li><input type="radio" name="question5" value="Des soins médicaux" /> Des soins médicaux</li>
+                                </ul>
+                            </div>
+                            <div class="error kanit-extralight text-white text-center"></div>
+                            <div class="text-center">
+                                <a href="javascript:void(0);" onclick="nextQuestion(5);" class="btn-red">Continuer</a>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="quiz-question quiz5 columns column-full small-12">
+                        <div class="middle-screen">
+                            <div class="font-50 kanit-semibold text-white text-center text-uppercase">
+                                1 minute
+                            </div>
+                            <div class="font-30 kanit-semibold text-white text-center text-uppercase">
+                                Pour participer à notre enquête
+                            </div>
+                            <div class="question font-24 kanit text-white text-center">
+                                Pour valider vos réponses, merci de<br />nous transmettre vos coordonnées ci-dessous :
+                            </div>
+                            <form>
+                                <div class="columns medium-6"><input type="text" class="input" name="nom" id="nom" value="" placeholder="Nom*" /></div>
+                                <div class="columns medium-6 end"><input type="text" class="input" name="prenom" id="prenom" value="" placeholder="Prénom*" /></div>
+                                <div class="columns medium-6"><input type="text" class="input" name="email" id="email" value="" placeholder="Adresse e-mail*" /></div>
+                                <div class="columns medium-6 end"><input type="text" class="input" name="tel" id="tel" value="" placeholder="Numéro de téléphone" /></div>
+                            </form>
+                            <div class="font-12 opensans text-white text-center">
+                                En laissant mon numéro, j'accepte que la Mie de Pain<br />me contacte pour m'informer de ses actions<br />en faveur des sans abri.
+                            </div>
+                            <div class="error kanit-extralight text-white text-center"></div>
+                            <div class="text-center">
+                                <a href="javascript:void(0);" onclick="endQuiz();" class="btn-red">Valider</a>
+                            </div>
+                            <div class="legend-form font-12 opensans text-white text-center">
+                                * Champs obligatoires
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="row fullwidth">
+                <div class="finish columns column-full small-12">
+                    <div class="middle-screen">
+                        <div class="font-50 kanit-semibold text-white text-center text-uppercase">
+                            Merci
+                        </div>
+                        <div class="font-30 kanit-semibold text-white text-center text-uppercase">
+                            de votre participation !
+                        </div>
+                        <p class="kanit-extralight font-18 text-white text-center">Vos réponses vont nous aider à mieux connaître les actions que vous jugez prioritaires pour accompagner les personnes sans-abri « de l’urgence à l’insertion ».</p>
+                        <p class="kanit-extralight font-18 text-white text-center">Mais alors que le nombre de personnes à la rue a progressé de 50% en 10 ans en France, faites un geste complémentaire pour offrir une nouvelle chance et un nouveau départ aux plus démunis d’entre nous.</p>
+                        <p class="kanit-extralight font-18 text-white text-center">Merci pour votre engagement contre la précarité en France !</p>
+                        <div class="phrase-don font-30 kanit-semibold text-white text-center text-uppercase">
+                            J'amplifie mon action en faisant un don
+                        </div>
+                        <div class="dons" data-equalizer>
+                            <div class="columns medium-4 column-don" data-equalizer-watch>
+                                <div class="bloc-don" onclick="window.open('https://donner.miedepain.asso.fr/?cid=32&amount=3500');">
+                                    <div class="title text-center"><img src="img/fleche_rouge.png" /></div>
+                                    <div class="text">
+                                        <div class="kanit-light font-50 text-white text-center">35€</div> 
+                                        <div class="kanit-light font-12 text-white text-center">(soit 9€ après<br />déduction fiscale)</div> 
+                                        <div class="text-don kanit-light text-white text-center">1 journée de prise en charge<br />pour 1 jeune en difficulté</div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns medium-4 column-don" data-equalizer-watch>
+                                <div class="bloc-don" onclick="window.open('https://donner.miedepain.asso.fr/?cid=32&amount=5500');">
+                                    <div class="title text-center"><img src="img/fleche_rouge.png" /></div>
+                                    <div class="text">
+                                        <div class="kanit-light font-50 text-white text-center">55€</div> 
+                                        <div class="kanit-light font-12 text-white text-center">(soit 14€ après<br />déduction fiscale)</div> 
+                                        <div class="text-don kanit-light text-white text-center">1 nuit d’hébergement, 3 repas<br />chauds, 1ers soins médicaux<br />pour 1 personne sans-abri</div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns medium-4 column-don end" data-equalizer-watch>
+                                <div class="bloc-don" onclick="window.open('https://donner.miedepain.asso.fr/?cid=32&amount=13000');">
+                                    <div class="title text-center"><img src="img/fleche_rouge.png" /></div>
+                                    <div class="text">
+                                        <div class="kanit-light font-50 text-white text-center">130€</div> 
+                                        <div class="kanit-light font-12 text-white text-center">(soit 33€ après<br />déduction fiscale)</div> 
+                                        <div class="text-don kanit-light text-white text-center">10 journées d’accueil de<br />jour pour 1 personne sans-abri</div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/what-input.js"></script>
+        <script src="js/vendor/foundation.js"></script>
+        <script src="js/jquery.qtip.min.js"></script>
+        <script src="js/cors.js"></script>
+        <script src="js/custom.js"></script>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-7968425-1']);
+            _gaq.push(['_setDomainName', 'miedepain.asso.fr']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+        <!-- Start of Woopra Code -->
+        <script>
+            function extractUrlParams(){ 
+                var t = document.location.search.substring(1).split('&'); var f = [];
+                for (var i=0; i<t.length; i++){ 
+                    var x = t[ i ].split('=');
+                f[x[0]]=decodeURIComponent(x[1]);
+                }
+                return f;
+            };
+
+            (function(){
+                var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+            })("woopra");
+
+            woopra.config({
+                domain: 'miedepain.asso.fr'
+            });
+
+            var p = extractUrlParams();
+
+            if ('email' in p) {
+                if ('lastname' in p && 'firstname' in p) {
+                    woopra.identify({
+                        email: p['email'],
+                        name: p['firstname'] + ' ' + p['lastname']
+                    });
+                } else {woopra.identify({email: p['email']})}
+            }
+
+            woopra.track();
+        </script>
+        <!-- End of Woopra Code -->
+    </body>
+</html>

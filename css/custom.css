@@ -361,3 +361,18 @@ p {
         margin-bottom: 50px;
     }
 }
+
+@media all and (max-height: 750px) {
+    .finish {
+        overflow: auto;
+    }
+
+    .finish .middle-screen {
+        width: 80%;
+        position: relative;
+        top: 100px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}

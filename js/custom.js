@@ -154,11 +154,20 @@ $(function(){
             i++;
         });
     });
-    
-    if(screen.width <= 769) {
+
+    if(screen.width <= 769 || screen.height <= 750) {
         $('.finish').css('height', screen.height + 'px !important');
     }
     else {
         $('.finish').css('height', '100%');
     }
+
+    $(window).on('resize', function() {
+        if(screen.width <= 769 || screen.height <= 750) {
+            $('.finish').css('height', screen.height + 'px !important');
+        }
+        else {
+            $('.finish').css('height', '100%');
+        }
+    })
 });

@@ -10,7 +10,7 @@ function nextQuestion(question) {
     $('.error', $('.quiz' + (question-1))).html('').css('display', 'none');
     
     // On vérifie que la personne a répondu à la question
-    if($('input[type=radio]:checked', $('.quiz' + (question-1))).length == 0) {
+    if($('input[type=radio]:checked, input[type=checkbox]:checked', $('.quiz' + (question-1))).length == 0) {
         $('.error', $('.quiz' + (question-1))).html('Merci de cocher une réponse à la question').css('display', 'block');
     }
     else {
@@ -21,12 +21,14 @@ function nextQuestion(question) {
 }
 
 function checkAnswer(question, el, radioIndex) {
-    $('.' + question).attr('src', 'img/checkbox-off.png');
+    if(question.indexOf('radio') >= 0) {
+        $('.' + question).attr('src', 'img/checkbox-off.png');
+    }
+
+    var type = question.split('-');
     $(el).attr('src', 'img/checkbox-on.png');
-    $(el).parents('.quiz-question').find('input[type=radio]').eq(radioIndex).prop('checked', true);
+    $(el).parents('.quiz-question').find('input[type=' + type[0] + ']').eq(radioIndex).prop('checked', true);
 }
-
-
 
 function endQuiz() {
     $('.qtip').each(function(){
@@ -112,6 +114,25 @@ function endQuiz() {
         });
     }
     
+    if($("#tel").val() != '' && !$("#tel").intlTelInput("isValidNumber")) {
+        error = true;
+        $('#tel').qtip({
+            content: 'Ce champ doit être un téléphone valide',
+            position: {
+                my: 'top center',
+                at: 'bottom center'
+            },
+            show: {
+                event: false,
+                ready: true
+            },
+            hide: {
+                event: false
+            },
+            style: { classes: 'qtip-red' }
+        });
+    }
+
     if(!error) {
         var today = new Date();
         data = {
@@ -120,12 +141,14 @@ function endQuiz() {
                 "firstname" : $('#prenom').val(),
                 "lastname" : $('#nom').val(),
                 "email" : $('#email').val(),
-                "phone" : $('#tel').val(),
+                "phone" : $("#tel").intlTelInput("getNumber"),
                 "q1" : $('input[type=radio]:checked', $('.quiz0')).val(),
                 "q2" : $('input[type=radio]:checked', $('.quiz1')).val(),
                 "q3" : $('input[type=radio]:checked', $('.quiz2')).val(),
                 "q4" : $('input[type=radio]:checked', $('.quiz3')).val(),
-                "q5" : $('input[type=radio]:checked', $('.quiz4')).val(),
+                "q5" : $('input[type=checkbox]:checked', $('.quiz4')).map(function() {
+                    return this.value;
+                }).get().join('|'),
                 "date": today.toString()
             }
         }
@@ -136,11 +159,11 @@ function endQuiz() {
             });
 
             woopra.identify({
-                email: {$('#email').val()},
+                email: $('#email').val(),
                 name: $('#prenom').val() + ' ' + $('#nom').val(),
                 firstname: $('#prenom').val(),
                 lastname: $('#nom').val(),
-                phone: $('#tel').val()
+                phone: $("#tel").intlTelInput("getNumber")
             });
             woopra.track("inscription", {
                 optin: "oui",
@@ -160,12 +183,12 @@ function endQuiz() {
 }
 
 $(function(){
-	// Remplacement des radios
+	// Remplacement des radios/checkboxes
     $('.quiz-question').each(function() {
         var i = 0;
-        $('input[type=radio]', $(this)).each(function() {
+        $('input[type=radio], input[type=checkbox]', $(this)).each(function() {
             var that = this;
-            $(that).prop('checked', false).css('display', 'none').after($('<img src="img/checkbox-off.png" class="custom-checkbox radio-' + $(that).attr('name') + '" onclick="checkAnswer(\'radio-' + $(that).attr('name') + '\', this, ' + i + ');" />'));
+            $(that).prop('checked', false).css('display', 'none').after($('<img src="img/checkbox-off.png" class="custom-checkbox radio-' + $(that).attr('name') + '" onclick="checkAnswer(\'' + $(that).attr('type') + '-' + $(that).attr('name') + '\', this, ' + i + ');" />'));
             i++;
         });
     });
@@ -184,5 +207,12 @@ $(function(){
         else {
             $('.finish').css('height', '100%');
         }
-    })
+    });
+
+    // Gestion du numéro de téléphone
+    $("#tel").intlTelInput({
+        utilsScript: 'js/utils.js',
+        onlyCountries: ['fr'],
+        allowDropdown: false
+    });
 });

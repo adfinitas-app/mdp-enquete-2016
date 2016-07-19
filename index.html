@@ -7,6 +7,7 @@
         <title>Mie de Pain</title>
         <link rel="stylesheet" href="css/foundation.css">
         <link rel="stylesheet" href="css/jquery.qtip.min.css">
+        <link rel="stylesheet" href="css/intlTelInput.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
@@ -145,12 +146,12 @@
                             </div>
                             <div class="answers font-24 kanit text-white text-center">
                                 <ul>
-                                    <li><input type="radio" name="question5" value="Un abri" /> Un abri</li>
-                                    <li><input type="radio" name="question5" value="Un logement" /> Un logement</li>
-                                    <li><input type="radio" name="question5" value="Un accompagnement social" /> Un accompagnement social</li>
-                                    <li><input type="radio" name="question5" value="Une alimentation" /> Une alimentation</li>
-                                    <li><input type="radio" name="question5" value="Un travail" /> Un travail</li>
-                                    <li><input type="radio" name="question5" value="Des soins médicaux" /> Des soins médicaux</li>
+                                    <li><input type="checkbox" name="question5[]" value="Un abri" /> Un abri</li>
+                                    <li><input type="checkbox" name="question5[]" value="Un logement" /> Un logement</li>
+                                    <li><input type="checkbox" name="question5[]" value="Un accompagnement social" /> Un accompagnement social</li>
+                                    <li><input type="checkbox" name="question5[]" value="Une alimentation" /> Une alimentation</li>
+                                    <li><input type="checkbox" name="question5[]" value="Un travail" /> Un travail</li>
+                                    <li><input type="checkbox" name="question5[]" value="Des soins médicaux" /> Des soins médicaux</li>
                                 </ul>
                             </div>
                             <div class="error kanit-extralight text-white text-center"></div>
@@ -174,7 +175,7 @@
                                 <div class="columns medium-6"><input type="text" class="input" name="nom" id="nom" value="" placeholder="Nom*" /></div>
                                 <div class="columns medium-6 end"><input type="text" class="input" name="prenom" id="prenom" value="" placeholder="Prénom*" /></div>
                                 <div class="columns medium-6"><input type="text" class="input" name="email" id="email" value="" placeholder="Adresse e-mail*" /></div>
-                                <div class="columns medium-6 end"><input type="text" class="input" name="tel" id="tel" value="" placeholder="Numéro de téléphone" /></div>
+                                <div class="columns medium-6 end"><input type="text" class="input" name="tel" id="tel" value="" placeholder="" /></div>
                             </form>
                             <div class="font-12 opensans text-white text-center">
                                 <b>En laissant mon numéro, j'accepte que la Mie de Pain<br />me contacte pour m'informer de ses actions<br />en faveur des sans abri.<b/>
@@ -199,9 +200,9 @@
                         <div class="font-30 kanit-semibold text-white text-center text-uppercase">
                             de votre participation !
                         </div>
-                        <p class="kanit-extralight font-18 text-white text-center">Vos réponses vont nous aider à mieux connaître les actions que vous jugez prioritaires pour accompagner les personnes sans-abri « de l’urgence à l’insertion ».</p>
-                        <p class="kanit-extralight font-18 text-white text-center">Mais alors que le nombre de personnes à la rue a progressé de 50% en 10 ans en France, faites un geste complémentaire pour offrir une nouvelle chance et un nouveau départ aux plus démunis d’entre nous.</p>
-                        <p class="kanit-extralight font-18 text-white text-center">Merci pour votre engagement contre la précarité en France !</p>
+                        <p class="kanit-semibold font-16 text-white text-center">Vos réponses vont nous aider à mieux connaître les actions que vous jugez prioritaires pour accompagner les personnes sans-abri « de l’urgence à l’insertion ».</p>
+                        <p class="kanit-semibold font-16 text-white text-center">Mais alors que le nombre de personnes à la rue a progressé de 50% en 10 ans en France, faites un geste complémentaire pour offrir une nouvelle chance et un nouveau départ aux plus démunis d’entre nous.</p>
+                        <p class="kanit-semibold font-16 text-white text-center">Merci pour votre engagement contre la précarité en France !</p>
                         <div class="phrase-don font-30 kanit-semibold text-white text-center text-uppercase">
                             J'amplifie mon action en faisant un don
                         </div>
@@ -236,6 +237,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div style="clear: both;"></div>
                         </div>
                     </div>
                 </div> 
@@ -246,6 +248,8 @@
         <script src="js/vendor/what-input.js"></script>
         <script src="js/vendor/foundation.js"></script>
         <script src="js/jquery.qtip.min.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/intlTelInput.min.js"></script>
         <script src="js/cors.js"></script>
         <script src="js/custom.js"></script>
 

@@ -134,6 +134,21 @@ function endQuiz() {
             $('.container').animate({
                 scrollTop: $('.finish').offset().top + $('.container').scrollTop()
             });
+
+            woopra.identify({
+                email: {$('#email').val()},
+                name: $('#prenom').val() + ' ' + $('#nom').val(),
+                firstname: $('#prenom').val(),
+                lastname: $('#nom').val(),
+                phone: $('#tel').val()
+            });
+            woopra.track("inscription", {
+                optin: "oui",
+                url: document.location.href,
+                title: document.title,
+                origine: "enquete2016"
+            });
+            woopra.track("enquete2016", {canal:"lp"});
         }
 
         function error() {

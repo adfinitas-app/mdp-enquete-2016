@@ -26,8 +26,14 @@ function checkAnswer(question, el, radioIndex) {
     }
 
     var type = question.split('-');
-    $(el).attr('src', 'img/checkbox-on.png');
-    $(el).parents('.quiz-question').find('input[type=' + type[0] + ']').eq(radioIndex).prop('checked', true);
+    if(question.indexOf('checkbox') >= 0 && $(el).attr('src') == 'img/checkbox-on.png') {
+        $(el).attr('src', 'img/checkbox-off.png');
+        $(el).parents('.quiz-question').find('input[type=' + type[0] + ']').eq(radioIndex).prop('checked', false);
+    }
+    else {
+        $(el).attr('src', 'img/checkbox-on.png');
+        $(el).parents('.quiz-question').find('input[type=' + type[0] + ']').eq(radioIndex).prop('checked', true);
+    }
 }
 
 function endQuiz() {
@@ -184,13 +190,17 @@ function endQuiz() {
 
 $(function(){
 	// Remplacement des radios/checkboxes
+    var j = 0;
     $('.quiz-question').each(function() {
         var i = 0;
         $('input[type=radio], input[type=checkbox]', $(this)).each(function() {
             var that = this;
-            $(that).prop('checked', false).css('display', 'none').after($('<img src="img/checkbox-off.png" class="custom-checkbox radio-' + $(that).attr('name') + '" onclick="checkAnswer(\'' + $(that).attr('type') + '-' + $(that).attr('name') + '\', this, ' + i + ');" />'));
+
+            $(that).prop('checked', false).css('display', 'none').after($('<img src="img/checkbox-off.png" class="custom-checkbox radio-' + $(that).attr('name') + ' img-' + i + ' quiz-question-' + j + '" onclick="checkAnswer(\'' + $(that).attr('type') + '-' + $(that).attr('name') + '\', \'.quiz-question-' + j + '.img-' + $(that).parent().index() + '\', ' + i + ');" />'));
+            $(that).parent().find('label').attr('onclick', 'checkAnswer(\'' + $(that).attr('type') + '-' + $(that).attr('name') + '\', \'.quiz-question-' + j + '.img-' + $(that).parent().index() + '\', ' + i + ');');
             i++;
         });
+        j++;
     });
 
     if(screen.width <= 769 || screen.height <= 750) {

@@ -220,6 +220,15 @@ body {
     text-align: left;
 }
 
+.answers ul li label {
+    display: inline-block;
+}
+
+.answers ul li img {
+    vertical-align: baseline;
+    margin-right: 5px;
+}
+
 .custom-checkbox {
     cursor: pointer;
 }
